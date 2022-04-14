@@ -133,9 +133,9 @@ function showDate(lang) {
 async function getQuotes(lang) {
 	let path;
 	if (lang === "eng") {
-		path = "./js/data-eng.json";
+		path = "./data/data-eng.json";
 	} else {
-		path = "./js/data-ru.json";
+		path = "./data/data-ru.json";
 	}
 	const res = await fetch(path);
 	const data = await res.json();
@@ -229,7 +229,8 @@ taskNameInput.addEventListener("keydown", function (e) {
 });
 
 settingsButton.addEventListener("click", function () {
-	settingsPanel.classList.toggle("settings__panel_show");
+	settingsPanel.classList.add('settings__panel_hide')
+	settingsPanel.classList.toggle('settings__panel_show')
 });
 settingsButton.addEventListener("click", function () {
 	if (this.classList.contains("settings__button_animate")) {
@@ -284,7 +285,3 @@ function createStateOfCheckbox() {
 	});
 	return checkboxState;
 }
-
-console.log(
-	"Благодарю за терпение! \n Self Check - 152.5 балла \n Отзыв по пунктам ТЗ: \n Не выполненные/не засчитанные пункты: \n 1) переводятся настройки приложения, при переключении языка приложения в настройках, язык настроек тоже меняется \n 2) если источником получения фото указан API, в настройках приложения можно указать тег/теги, для которых API будет присылает фото \n Частично выполненные пункты: \n 1) переводится прогноз погоды в т.ч описание погоды и город по умолчанию \n Остальное вроде все выполнено. С ползунком выбора конкретного времени в аудиоплеере могут быть проблемы, но он рабочий :)"
-);
