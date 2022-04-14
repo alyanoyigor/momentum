@@ -1,4 +1,7 @@
 # Momentum ([`LOOK CLOSER`](https://alyanoyigor.github.io/momentum/))
+
+## The Momentum Project is an implementation of the Momentum extension in the Google Chrome Web Store with additional features
+
 ![Momentum](https://user-images.githubusercontent.com/85354736/163361409-1f6fd4fa-b429-41bd-a518-ee506fdc1c28.png)
 ### Functionallity
 - The Momentum Project is a copy of the Momentum extension in the Google Chrome Web Store with additional features.
