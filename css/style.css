@@ -484,6 +484,7 @@ body {
 	position: absolute;
 	text-align: left;
 	left: 20px;
+	width: 50%;
 }
 
 .settings__title {
@@ -491,42 +492,49 @@ body {
 }
 
 .settings__panel {
+	position: relative;
+	z-index: 100;
 	background-color: #000;
-	width: 500px;
-	height: 350px;
+	max-width: 500px;
+	width: 100%;
+	height: 0px;
 	margin-bottom: 25px;
 	overflow-y: auto;
-	opacity: 0;
+}
+
+.settings__panel_hide {
 	animation: fade_in_hide 0.5s;
 }
 
 @keyframes fade_in_hide {
 	from {
 		opacity: 1;
-		transform: scaleY(1);
+		height: 350px;
 		transform-origin: bottom;
 	}
-
+	
 	to {
 		opacity: 0;
-		transform: scaleY(0);
+		height: 0px;
 		transform-origin: bottom;
 	}
 }
+
 .settings__panel_show {
-	opacity: 1;
+	height: 350px;
 	animation: fade_in_show 0.5s;
 }
+
 @keyframes fade_in_show {
 	from {
 		opacity: 0;
-		transform: scaleY(0);
+		height: 0px;
 		transform-origin: bottom;
 	}
 
 	to {
 		opacity: 1;
-		transform: scaleY(1);
+		height: 350px;
 		transform-origin: bottom;
 	}
 }
@@ -679,6 +687,15 @@ input:checked + .settings__item-slider:before {
 
 	to {
 		opacity: 0;
+	}
+}
+
+@media (max-width: 1000px) {
+	.audio-player, 
+	.settings__item-title__audio, 
+	.todo-list, 
+	.settings__item-title__todo {
+		display: none;
 	}
 }
 
